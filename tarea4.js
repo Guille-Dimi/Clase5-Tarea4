@@ -46,7 +46,29 @@ document.querySelector('#calcular').onclick = function(){
     }
     document.querySelector('#numero-mayor').innerText += numeroMayor(listli)
 
-    
+    function contadorFrecuencia(num, array){
+        let apariciones = 0
+
+        for(let i = 0; i < array.length; i++){
+            if(num === array[i]){
+                apariciones++
+            }
+        }
+        return apariciones
+    }
+
+    function elementoMasFrecuente(array){
+        let masFrecuente = array[0]
+
+        for(let i = 1; i < array.length; i++){
+            if(contadorFrecuencia(masFrecuente, array) < contadorFrecuencia(array[i], array)){
+                masFrecuente = array[i]
+            }
+        }
+        return masFrecuente
+    }
+    document.querySelector('#numero-frecuente').innerText += elementoMasFrecuente(listli)
+
 
 
     return false
