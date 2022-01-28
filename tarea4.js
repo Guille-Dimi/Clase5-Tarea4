@@ -35,6 +35,17 @@ document.querySelector('#calcular').onclick = function(){
     }
     document.querySelector('#numero-menor').innerText += numeroMenor(listli)
     
+    function numeroMayor(array){
+        let numeroMayor = array[0]
+        for(let i = 1; i < array.length; i++){
+            if(array[i] > numeroMayor){
+                numeroMayor = array[i]
+            }
+        }
+        return numeroMayor
+    }
+    document.querySelector('#numero-mayor').innerText += numeroMayor(listli)
+
     
 
 
