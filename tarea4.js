@@ -24,7 +24,20 @@ document.querySelector('#calcular').onclick = function(){
     }
     document.querySelector('#promedio').innerText += calcularPromedio(listli)
 
+    function numeroMenor(array){
+        let numeroMenor = array[0]
+        for(let i = 1; i < array.length; i++){
+            if(array[i] < numeroMenor){
+                numeroMenor = array[i]
+            }
+        }
+        return numeroMenor
+    }
+    document.querySelector('#numero-menor').innerText += numeroMenor(listli)
     
+    
+
+
     return false
 }
 
